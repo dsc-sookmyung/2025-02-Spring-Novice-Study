@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="45a7b3d8-7708-44ae-85d0-2d13bc948d2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/2025-02-Spring-Novice-Study.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/springboot-developer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/이주원/springboot-developer/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/springboot-developer/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/이주원/springboot-developer/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/springboot-developer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/이주원/springboot-developer/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/이주원/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/이주원/springboot-developer" beforeDir="false" afterPath="$PROJECT_DIR$/이주원/springboot-developer" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="33KRDE4fDownyBxZ1RaHbGR0J9a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ericalee/2025-02-Spring-Novice-Study",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.language.and.region"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="45a7b3d8-7708-44ae-85d0-2d13bc948d2a" name="Changes" comment="" />
+      <created>1758972372283</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758972372283</updated>
+    </task>
+    <servers />
+  </component>
+</project>
