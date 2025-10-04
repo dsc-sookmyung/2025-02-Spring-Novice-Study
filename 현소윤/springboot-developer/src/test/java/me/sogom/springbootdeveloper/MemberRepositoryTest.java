@@ -16,8 +16,11 @@ class MemberRepositoryTest {
 
     @Sql("/insert-members.sql")
     @Test
-    void getAllMembers() {
-        List<Member> members = memberRepository.findAll();  //When
-        assertThat(members.size()).isEqualTo(3);
+    void getMemberByName() {
+        //when
+        Member member = memberRepository.findByName("C").get();
+
+        //then
+        assertThat(member.getId()).isEqualTo(3);
     }
 }
