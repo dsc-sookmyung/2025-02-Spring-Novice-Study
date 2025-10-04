@@ -1,5 +1,6 @@
 package me.sogom.springbootdeveloper;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -14,30 +15,23 @@ class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
-//    @Sql("/insert-members.sql")
-    @Test
-    /*void getMemberByName() {
-        //when
-        Member member = memberRepository.findByName("C").get();
-
-        //then
-        assertThat(member.getId()).isEqualTo(3);
-    }*/
-    /*void saveMember() {
-        //given
-        Member member = new Member(1L, "A");
-        //when
-        memberRepository.save(member);
-        //then
-        assertThat(memberRepository.findById(1L).get().getName()).isEqualTo("A");
-    }*/
-    void saveMembers() {
-        //given
-        List<Member> members = List.of(new Member(2L, "B"),
-                new Member(3L, "C"));
-        //when
-        memberRepository.saveAll(members);
-        //then
-        assertThat(memberRepository.findAll().size()).isEqualTo(2);
+    @AfterEach
+    public void cleanUp() {
+        memberRepository.deleteAll();
     }
+    @Sql("/insert-members.sql")
+    @Test
+    /*void deleteMemberById() {
+        //when
+        memberRepository.deleteById(2L);
+        //then
+        assertThat(memberRepository.findById(2L).isEmpty()).isTrue();
+    }*/
+    void deleteAll() {    //주로 test 간 분리 시 사용 
+        //when
+        memberRepository.findAll();
+        //then
+        assertThat(memberRepository.findAll().size()).isZero();
+    }
+
 }
