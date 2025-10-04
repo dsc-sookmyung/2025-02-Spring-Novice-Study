@@ -15,23 +15,14 @@ class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
-    @AfterEach
-    public void cleanUp() {
-        memberRepository.deleteAll();
-    }
     @Sql("/insert-members.sql")
     @Test
-    /*void deleteMemberById() {
+    void update() {
+        //given
+        Member member = memberRepository.findById(2L).get();
         //when
-        memberRepository.deleteById(2L);
+        member.changeName("BC");
         //then
-        assertThat(memberRepository.findById(2L).isEmpty()).isTrue();
-    }*/
-    void deleteAll() {    //주로 test 간 분리 시 사용 
-        //when
-        memberRepository.findAll();
-        //then
-        assertThat(memberRepository.findAll().size()).isZero();
+        assertThat(memberRepository.findById(2L).get().getName()).isEqualTo("BC");
     }
-
 }
