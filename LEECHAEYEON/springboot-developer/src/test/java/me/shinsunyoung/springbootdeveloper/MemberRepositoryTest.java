@@ -8,18 +8,18 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DataJpaTest
-class MemberRepositoryTest {
+public class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
     @Sql("/insert-members.sql")
     @Test
-    void getAllMembers() {
+    void getMemberById() {
         //when
-        List<Member> members = memberRepository.findAll();
+        Member member = memberRepository.findById(2L).get();
 
         //then
-        assertThat(members.size()).isEqualTo(3);
+        assertThat(member.getName()).isEqualTo("B");
     }
 
 }
