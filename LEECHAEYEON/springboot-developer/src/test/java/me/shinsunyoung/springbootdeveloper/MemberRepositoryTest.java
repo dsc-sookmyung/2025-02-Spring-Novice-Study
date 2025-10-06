@@ -14,12 +14,12 @@ public class MemberRepositoryTest {
 
     @Sql("/insert-members.sql")
     @Test
-    void deleteMemberById() {
+    void deleteAll() {
         //when
-        memberRepository.deleteById(2L);
+        memberRepository.deleteAll();
 
         //then
-        assertThat(memberRepository.findById(2L).isEmpty()).isTrue();
+        assertThat(memberRepository.findAll().size()).isZero();
     }
 
 }
