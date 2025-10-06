@@ -11,17 +11,15 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
-    
-    @Test
-    void saveMembers() {
-        //given
-        List<Member> members = List.of(new Member(2L, "B"), new Member(3L, "C"));
 
+    @Sql("/insert-members.sql")
+    @Test
+    void deleteMemberById() {
         //when
-        memberRepository.saveAll(members);
+        memberRepository.deleteById(2L);
 
         //then
-        assertThat(memberRepository.findAll().size()).isEqualTo(2);
+        assertThat(memberRepository.findById(2L).isEmpty()).isTrue();
     }
 
 }
