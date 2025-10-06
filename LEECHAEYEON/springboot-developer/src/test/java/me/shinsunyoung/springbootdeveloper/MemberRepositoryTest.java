@@ -13,10 +13,19 @@ public class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
-    @AfterEach
+    @Sql("/insert-members.sql")
     @Test
-    void cleanUp() {
-        memberRepository.deleteAll();
+    void update() {
+        //given
+        Member member = memberRepository.findById(2L).get();
+
+        //when
+        member.changeName("BC");
+
+        //then
+        assertThat(memberRepository.findById(2L).get().getName()).isEqualTo("BC");
+
+
     }
 
 }
