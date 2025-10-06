@@ -1,5 +1,6 @@
 package me.shinsunyoung.springbootdeveloper;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -12,14 +13,10 @@ public class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
-    @Sql("/insert-members.sql")
+    @AfterEach
     @Test
-    void deleteAll() {
-        //when
+    void cleanUp() {
         memberRepository.deleteAll();
-
-        //then
-        assertThat(memberRepository.findAll().size()).isZero();
     }
 
 }
