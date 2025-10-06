@@ -14,12 +14,15 @@ public class MemberRepositoryTest {
 
     @Sql("/insert-members.sql")
     @Test
-    void getMemberByName() {
+    void saveMember() {
+        //given
+        Member member = new Member(1L, "A");
+
         //when
-        Member member = memberRepository.findByName("C").get();
+        memberRepository.save(member);
 
         //then
-        assertThat(member.getId()).isEqualTo(3);
+        assertThat(memberRepository.findById(1L).get().getName()).isEqualTo("A");
     }
 
 }
