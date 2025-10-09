@@ -1,8 +1,10 @@
 package me.sogom.springbootdeveloper.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import me.sogom.springbootdeveloper.domain.Article;
 import me.sogom.springbootdeveloper.dto.AddArticleRequest;
+import me.sogom.springbootdeveloper.dto.UpdateArticleRequest;
 import me.sogom.springbootdeveloper.repository.BlogRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +31,14 @@ public class BlogService {
     //삭제하고자 하는 글의 ID를 입력받아 글을 삭제
     public void delete(Long id) {
         blogRepository.deleteById(id);
+    }
+
+    @Transactional  //트랜잭션 메서드
+    public Article update(long id, UpdateArticleRequest request) {
+        Article article = blogRepository.findById(id)
+                .orElseThrow(()-> new IllegalArgumentException("not found: "+id));
+
+        article.update(request.getTitle(), request.getContent());
+        return article;
     }
 }

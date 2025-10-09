@@ -27,4 +27,9 @@ public class Article {
         this.title = title;
         this.content = content;
     }
+    //요청받은 애용으로 값을 수정
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
