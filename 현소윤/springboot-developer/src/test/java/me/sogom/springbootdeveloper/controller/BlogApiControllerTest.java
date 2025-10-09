@@ -97,7 +97,7 @@ class BlogApiControllerTest {
     @Test
     void findArticle() throws Exception {
         //given
-        final String url = "/api/articles/{1}";
+        final String url = "/api/articles/{id}";
         final String title = "title";
         final String content = "content";
 
