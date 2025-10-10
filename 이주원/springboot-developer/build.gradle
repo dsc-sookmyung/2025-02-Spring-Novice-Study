@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'me.leejoowon'
-version = '1.0'
+version ='1.0'
 sourceCompatibility = '17'
 
 repositories {
