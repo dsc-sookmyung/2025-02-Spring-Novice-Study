@@ -4,6 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="e31c9673-f9b3-4544-a163-4433eb3917c3" name="Changes" comment="chore: add .idea/ to .gitignore">
+      <change afterPath="$PROJECT_DIR$/src/main/java/chaewonan/springbootdeveloper/TestController.java" afterDir="false" />
     <list default="true" id="e31c9673-f9b3-4544-a163-4433eb3917c3" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -44,6 +46,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -54,11 +59,23 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Build springboot-developer.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.springboot-developer [:SpringBootDeveloperApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.springboot-developer.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.springboot-developer [:SpringBootDeveloperApplication.main()].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/anchaewon/Desktop/untitled/springboot/2025-02-Spring-Novice-Study/안채원/springboot-developer/src/main/java/chaewonan/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/chaewonan/springbootdeveloper" />
+    </key>
+  </component>
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/anchaewon/Desktop/untitled/springboot/2025-02-Spring-Novice-Study/안채원/springboot-developer/src/main/java/chaewonan/Main.java&quot;
   }
 }</component>
@@ -99,6 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1759130588382</updated>
     </task>
+    <task id="LOCAL-00002" summary="commit">
+      <option name="closed" value="true" />
+      <created>1759130986897</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759130986897</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chore: add .idea/ to .gitignore">
+      <option name="closed" value="true" />
+      <created>1759686980812</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759686980812</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore: add .idea/ to .gitignore">
+      <option name="closed" value="true" />
+      <created>1759687580281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759687580281</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
@@ -115,6 +157,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
+    <MESSAGE value="chore: add .idea/ to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add .idea/ to .gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
