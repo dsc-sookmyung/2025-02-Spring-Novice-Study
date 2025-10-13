@@ -1,14 +1,19 @@
 package chaewonan.springbootdeveloper.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
+@NoArgsConstructor(access= AccessLevel.PROTECTED)
 public class Article {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id", updatable=false)
-    private long id;
+    private Long id;
 
     @Column(name="title", nullable=false)
     private String title;
@@ -20,20 +25,5 @@ public class Article {
     public Article(String title, String content){
         this.title=title;
         this.content=content;
-    }
-
-    protected Article(){
-    }
-
-    public long getId(){
-        return id;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-
-    public String getContent(){
-        return content;
     }
 }
