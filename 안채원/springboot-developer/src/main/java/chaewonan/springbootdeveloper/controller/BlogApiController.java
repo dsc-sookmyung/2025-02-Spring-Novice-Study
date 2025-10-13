@@ -3,6 +3,7 @@ package chaewonan.springbootdeveloper.controller;
 import chaewonan.springbootdeveloper.domain.Article;
 import chaewonan.springbootdeveloper.dto.AddArticleRequest;
 import chaewonan.springbootdeveloper.dto.ArticleResponse;
+import chaewonan.springbootdeveloper.dto.UpdateArticleRequest;
 import chaewonan.springbootdeveloper.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -42,5 +43,14 @@ public class BlogApiController {
 
         return ResponseEntity.ok()
                 .build();
+    }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<Article> updateArticle(@PathVariable long id,
+                                                 @RequestBody UpdateArticleRequest request) {
+        Article updatedArticle = blogService.update(id, request);
+
+        return ResponseEntity.ok()
+                .body(updatedArticle);
     }
 }
