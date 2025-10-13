@@ -159,4 +159,7 @@ class BlogApiControllerTest {
         assertThat(article.getTitle()).isEqualTo(newTitle);
         assertThat(article.getContent()).isEqualTo(newContent);
     }
+import static org.junit.jupiter.api.Assertions.*;
+class BlogApiControllerTest {
+  
 }

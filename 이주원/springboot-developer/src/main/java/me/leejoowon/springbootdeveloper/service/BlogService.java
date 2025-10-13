@@ -42,4 +42,5 @@ public class BlogService {
 
         return article;
     }
+public class BlogService {
 }

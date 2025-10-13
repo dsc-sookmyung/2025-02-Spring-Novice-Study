@@ -33,3 +33,5 @@ public class Article {
         this.content = content;
     }
 }
+public class Article {
+}
