@@ -40,15 +40,15 @@ public class BlogApiController {
 
     @GetMapping("/api/articles/{id}")
     //URL 경로에서 값 추출
-    public ResponseEntity<ArticleResponse> findArticleById(@PathVariable("id") Long id) {
+    public ResponseEntity<ArticleResponse> findArticleById(@PathVariable("id") long id) {
         Article article = blogService.findById(id);
 
         return ResponseEntity.ok()
                 .body(new ArticleResponse(article));
     }
 
-    @GetMapping("/api/articles/{id}")
-    public ResponseEntity<Void> deleteArticleById(@PathVariable("id") Long id) {
+    @DeleteMapping("/api/articles/{id}")
+    public ResponseEntity<Void> deleteArticle(@PathVariable("id") long id) {
         blogService.delete(id);
 
         return ResponseEntity.ok().build();
