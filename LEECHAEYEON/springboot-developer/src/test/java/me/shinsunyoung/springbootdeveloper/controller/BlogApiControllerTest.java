@@ -92,7 +92,7 @@ class BlogApiControllerTest {
                 .andExpect(jsonPath("$[0].title").value(title));
     }
 
-    @DisplayName("findArticle: 블로그 글 조호에 성공한다.")
+    @DisplayName("findArticle: 블로그 글 조회에 성공한다.")
     @Test
     public void findArticle() throws Exception {
         //given
