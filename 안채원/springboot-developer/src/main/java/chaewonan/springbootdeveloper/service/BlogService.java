@@ -18,4 +18,8 @@ public class BlogService {
     public List<Article> findAll() {
         return blogRepository.findAll();
     }
+
+    public void delete(long id) {
+        blogRepository.deleteById(id);
+    }
 }
