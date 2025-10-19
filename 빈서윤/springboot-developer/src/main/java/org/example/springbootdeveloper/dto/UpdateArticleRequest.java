@@ -1,4 +1,4 @@
-package me.leejoowon.springbootdeveloper.dto;
+package org.example.springbootdeveloper.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class UpdateArticleRequest {
     private String title;
     private String content;
-public class UpdateArticleRequest {
 }
