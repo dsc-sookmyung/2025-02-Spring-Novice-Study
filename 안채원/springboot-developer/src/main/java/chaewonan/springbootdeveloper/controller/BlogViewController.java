@@ -18,6 +18,15 @@ public class BlogViewController {
 
     private final BlogService blogService;
 
+    @GetMapping("/articles")
+    public String getArticles(Model model) {
+        List<ArticleListViewResponse> articles = blogService.findAll().stream()
+                .map(ArticleListViewResponse::new)
+                .toList();
+        model.addAttribute("articles", articles);
+
+        return "articleList";
+    }
     @GetMapping("/articles/{id}")
     public String getArticle(@PathVariable Long id, Model model) {
         Article article = blogService.findById(id);
