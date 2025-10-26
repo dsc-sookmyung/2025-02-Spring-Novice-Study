@@ -20,6 +20,9 @@ dependencies {  //필요한 기능의 의존성을 입력
     compileOnly 'org.projectlombok:lombok'  //롬북 반복 메서드 작성 작업을 줄여주는 라이브러리
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 test {
