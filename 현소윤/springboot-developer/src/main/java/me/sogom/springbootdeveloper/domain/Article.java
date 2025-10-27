@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
+
 @Entity //엔티티로 지정
 @Getter //클래스 필드에 대해 별도 코드 없이 모든 필드에 대한 접근자 메서드 생성 가능
 @NoArgsConstructor(access = AccessLevel.PROTECTED)  //접근 제어자가 protected인 기본 생성자 대치
