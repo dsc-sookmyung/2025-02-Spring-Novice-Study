@@ -27,9 +27,11 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private String content;
+    private String author;
 
     @Builder // 빌더 패턴으로 객체 생성
-    public Article(String title, String content) {
+    public Article(String author, String title, String content) {
+        this.author = author;
         this.title = title;
         this.content = content;
     }
