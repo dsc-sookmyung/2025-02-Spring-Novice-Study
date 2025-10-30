@@ -26,10 +26,10 @@ public class BlogViewController {
                 .toList();
         model.addAttribute("articles", articles);
 
-        return "articlesList";
+        return "articleList";
     }
 
-    @GetMapping("article/{id}")
+    @GetMapping("articles/{id}")
     public String getArticle(@PathVariable("id") Long id, Model model) {
         Article article = blogService.findById(id);
         model.addAttribute("article", new ArticleViewResponse(article));

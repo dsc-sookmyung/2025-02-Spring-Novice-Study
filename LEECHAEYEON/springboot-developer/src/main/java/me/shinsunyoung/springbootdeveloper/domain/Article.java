@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
+@Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article {
@@ -43,7 +44,7 @@ public class Article {
     private LocalDateTime createdAt;
 
     @LastModifiedDate //엔티티가 수정될 때 수정시간 저장
-    @Column(name="update_at")
+    @Column(name="updated_at")
     private LocalDateTime updatedAt;
 
 }
