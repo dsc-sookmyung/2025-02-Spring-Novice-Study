@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GDGoC.iml" filepath="$PROJECT_DIR$/.idea/GDGoC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-developer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-developer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-developer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-developer.test.iml" />
     </modules>
   </component>
 </project>
