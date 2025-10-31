@@ -15,14 +15,9 @@ spring:
     console:
       enabled: true
 
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            scope:
-              - email
-              - profile
+  profiles:
+    include:
+      - oauth
 
 jwt:
   issuer: ajufresh@gmail.com
