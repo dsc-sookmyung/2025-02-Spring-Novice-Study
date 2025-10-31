@@ -27,6 +27,8 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private String content;
+
+    @Column(name = "author", nullable = false)
     private String author;
 
     @Builder // 빌더 패턴으로 객체 생성
