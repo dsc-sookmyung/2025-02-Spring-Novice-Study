@@ -15,7 +15,10 @@ spring:
     console:
       enabled: true
 
-  h2:
-    console:
-      enabled: true
-    defer-datasource-initialization: true
+  profiles:
+    include:
+      - oauth
+
+jwt:
+  issuer: ajufresh@gmail.com
+  secret_key: study-springboot

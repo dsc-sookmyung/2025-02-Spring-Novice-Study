@@ -6,39 +6,54 @@ import me.sogom.springbootdeveloper.domain.Article;
 import me.sogom.springbootdeveloper.dto.AddArticleRequest;
 import me.sogom.springbootdeveloper.dto.UpdateArticleRequest;
 import me.sogom.springbootdeveloper.repository.BlogRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor    //final이 붙거나 @NotNull이 붙은 필드의 생성자 추가
+@RequiredArgsConstructor
 @Service
 public class BlogService {
+
     private final BlogRepository blogRepository;
 
-    //blog 글 추가 메서드
-    public Article save(AddArticleRequest request) {    //AddArticleRequest class에 저장된 값을 article DB에 저장
-        return blogRepository.save(request.toEntity());
+    public Article save(AddArticleRequest request, String userName) {
+        return blogRepository.save(request.toEntity(userName));
     }
-    // DB에 저장된 글을 모두 가져옴
+
     public List<Article> findAll() {
         return blogRepository.findAll();
     }
-    //DB에 저장되어 있는 글의 ID를 이용해 글을 조회
-    public Article findById(Long id) {
+
+    public Article findById(long id) {
         return blogRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: "+id)); //해당 id가 없을 시 exception 발생
-    }
-    //삭제하고자 하는 글의 ID를 입력받아 글을 삭제
-    public void delete(Long id) {
-        blogRepository.deleteById(id);
+                .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
     }
 
-    @Transactional  //트랜잭션 메서드
+    public void delete(long id) {
+        Article article = blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
+
+        authorizeArticleAuthor(article);
+        blogRepository.delete(article);
+    }
+
+    @Transactional
     public Article update(long id, UpdateArticleRequest request) {
         Article article = blogRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("not found: "+id));
+                .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
 
+        authorizeArticleAuthor(article);
         article.update(request.getTitle(), request.getContent());
+
         return article;
     }
+
+    private static void authorizeArticleAuthor(Article article) {
+        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
+        if (!article.getAuthor().equals(userName)) {
+            throw new IllegalArgumentException("not authorized");
+        }
+    }
+
 }
