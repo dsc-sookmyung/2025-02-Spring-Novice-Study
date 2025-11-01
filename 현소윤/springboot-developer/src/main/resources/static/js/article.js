@@ -4,13 +4,17 @@ const deleteButton = document.getElementById('delete-btn');
 if (deleteButton) {
     deleteButton.addEventListener('click', event => {
         let id = document.getElementById('article-id').value;
-        fetch(`/api/articles/${id}`, {
-            method: 'DELETE'
-        })
-            .then(() => {
-                alert('삭제가 완료되었습니다.');
-                location.replace('/articles');
-            });
+        function success() {
+            alert("삭제가 완료되었습니다.");
+            location.replace("/articles");
+        }
+
+        function fail() {
+            alert("삭제 실패했습니다.");
+            location.replace("/articles");
+        }
+
+        httpRequest("DELETE", "/api/articles/" + id, null, success, fail);
     });
 }
 
@@ -22,19 +26,22 @@ if (modifyButton) {
         let params = new URLSearchParams(location.search);
         let id = params.get('id');
 
-        fetch(`/api/articles/${id}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
+        body: JSON.stringify({
                 title: document.getElementById('title').value,
                 content: document.getElementById('content').value,
-            })
-        }).then(() => {
+            });
+
+        function success() {
             alert('수정이 완료되었습니다.');
-            location.replace(`/articles/${id}`);
-        });
+            location.replace("/articles/" + id);
+        }
+
+        function fail() {
+            alert("수정 실패했습니다.");
+            location.replace("/articles/" + id);
+        }
+
+        httpRequest("PUT", "/api/articles/" + id, body, success, fail);
     });
 }
 
