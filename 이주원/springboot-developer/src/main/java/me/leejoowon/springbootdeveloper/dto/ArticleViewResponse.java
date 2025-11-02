@@ -14,19 +14,13 @@ public class ArticleViewResponse {
     private String title;
     private String content;
     private LocalDateTime createdAt;
-<<<<<<< HEAD
-=======
     private String author;
->>>>>>> main
 
     public ArticleViewResponse(Article article) {
         this.id = article.getId();
         this.title = article.getTitle();
         this.content = article.getContent();
         this.createdAt = article.getCreatedAt();
-<<<<<<< HEAD
-=======
         this.author = article.getAuthor();
->>>>>>> main
     }
 }

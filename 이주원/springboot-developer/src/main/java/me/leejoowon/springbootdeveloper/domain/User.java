@@ -28,12 +28,6 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
-<<<<<<< HEAD
-    @Builder
-    public User(String email, String password, String auth) {
-        this.email = email;
-        this.password = password;
-=======
     @Column(name = "nickname", unique = true)
     private String nickname;
 
@@ -47,7 +41,6 @@ public class User implements UserDetails {
         this.nickname = nickname;
 
         return this;
->>>>>>> main
     }
 
     @Override
