@@ -1,8 +1,6 @@
-package me.leejoowon.springbootdeveloper.controller.config.jwt;
+package me.leejoowon.springbootdeveloper.config.jwt;
 
 import io.jsonwebtoken.Jwts;
-import me.leejoowon.springbootdeveloper.config.jwt.JwtProperties;
-import me.leejoowon.springbootdeveloper.config.jwt.TokenProvider;
 import me.leejoowon.springbootdeveloper.domain.User;
 import me.leejoowon.springbootdeveloper.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
