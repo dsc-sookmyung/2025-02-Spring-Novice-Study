@@ -6,6 +6,7 @@ import chaewonan.springbootdeveloper.config.jwt.TokenProvider;
 import chaewonan.springbootdeveloper.config.oauth.OAuth2UserCustomService;
 import chaewonan.springbootdeveloper.repository.RefreshTokenRepository;
 import chaewonan.springbootdeveloper.service.UserService;
+import chaewonan.springbootdeveloper.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -57,7 +58,7 @@ public class WebOAuthSecurityConfig {
                         .anyRequest().permitAll())
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/login")
-                        .authorizationEndpoint(authorizationEndpoint -> authorizationEndpoint.authorizationRequestRepository(OAuth2AuthorizationRequestBasedOnCookieRepository()))
+                        .authorizationEndpoint(authorizationEndpoint -> authorizationEndpoint.authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository()))
                         .userInfoEndpoint(userInfoEndpoint -> userInfoEndpoint.userService(oAuth2UserCustomService))
                         .successHandler(oAuth2SuccessHandler())
                 )
