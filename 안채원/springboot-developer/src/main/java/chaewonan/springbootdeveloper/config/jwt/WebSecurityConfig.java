@@ -1,4 +1,4 @@
-package chaewonan.springbootdeveloper.config;
+package chaewonan.springbootdeveloper.config.jwt;
 
 import chaewonan.springbootdeveloper.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
