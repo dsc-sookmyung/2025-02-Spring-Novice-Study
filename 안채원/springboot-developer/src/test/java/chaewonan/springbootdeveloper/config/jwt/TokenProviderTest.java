@@ -31,16 +31,14 @@ class TokenProviderTest {
     @DisplayName("generateToken(): 유저 정보와 만료 기간을 전달해 토큰을 만들 수 있다.")
     @Test
     void generateToken() {
-        // given
+
         User testUser = userRepository.save(User.builder()
                 .email("user@gmail.com")
                 .password("test")
                 .build());
 
-        // when
         String token = tokenProvider.generateToken(testUser, Duration.ofDays(14));
 
-        // then
         Long userId = Jwts.parser()
                 .setSigningKey(jwtProperties.getSecretKey())
                 .parseClaimsJws(token)
@@ -59,10 +57,8 @@ class TokenProviderTest {
                 .build()
                 .createToken(jwtProperties);
 
-        // when
         boolean result = tokenProvider.validToken(token);
 
-        // then
         assertThat(result).isFalse();
     }
 
@@ -85,34 +81,28 @@ class TokenProviderTest {
     @DisplayName("getAuthentication(): 토큰 기반으로 인증정보를 가져올 수 있다.")
     @Test
     void getAuthentication() {
-        // given
         String userEmail = "user@email.com";
         String token = JwtFactory.builder()
                 .subject(userEmail)
                 .build()
                 .createToken(jwtProperties);
 
-        // when
         Authentication authentication = tokenProvider.getAuthentication(token);
 
-        // then
         assertThat(((UserDetails) authentication.getPrincipal()).getUsername()).isEqualTo(userEmail);
     }
 
     @DisplayName("getUserId(): 토큰으로 유저 ID를 가져올 수 있다.")
     @Test
     void getUserId() {
-        // given
         Long userId = 1L;
         String token = JwtFactory.builder()
                 .claims(Map.of("id", userId))
                 .build()
                 .createToken(jwtProperties);
 
-        // when
         Long userIdByToken = tokenProvider.getUserId(token);
 
-        // then
         assertThat(userIdByToken).isEqualTo(userId);
     }
 }
