@@ -1,3 +1,4 @@
+/*
 package org.example.springbootdeveloper.config;
 
 import lombok.RequiredArgsConstructor;
@@ -80,3 +81,6 @@ public BCryptPasswordEncoder bCryptPasswordEncoder() {
     return new BCryptPasswordEncoder();
     }
 }
+*/
+
+//OAuth2와 JWT를 함께 사용하기 위해 다른 설정 사용

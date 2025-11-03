@@ -16,10 +16,11 @@ public class AddArticleRequest {
 
     //빌더 패턴을 사용해 DTO를 엔티티로 만들어 주는 메서드
     //추후 블로그에 글을 추가할 때 저장할 엔티티로 변환하는 용도
-    public Article toEntity() {
+    public Article toEntity(String author) {
         return Article.builder()
                 .title(title)
                 .content(content)
+                .author(author)
                 .build();
     }
 }
