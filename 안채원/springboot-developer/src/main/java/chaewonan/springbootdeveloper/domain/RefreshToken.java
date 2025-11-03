@@ -18,15 +18,15 @@ public class RefreshToken {
     private Long userId;
 
     @Column(name = "refresh_token", updatable = false)
-    private String refreshtoken;
+    private String refreshToken;
 
-    public RefreshToken(Long userId, String refreshtoken) {
+    public RefreshToken(Long userId, String refreshToken) {
         this.userId = userId;
-        this.refreshtoken = refreshtoken;
+        this.refreshToken = refreshToken;
     }
 
     public RefreshToken update(String newRefreshToken) {
-        this.refreshtoken = newRefreshToken;
+        this.refreshToken = newRefreshToken;
         return this;
     }
 }

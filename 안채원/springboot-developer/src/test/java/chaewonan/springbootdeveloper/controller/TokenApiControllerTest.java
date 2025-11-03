@@ -1,5 +1,6 @@
 package chaewonan.springbootdeveloper.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import chaewonan.springbootdeveloper.config.jwt.JwtFactory;
 import chaewonan.springbootdeveloper.config.jwt.JwtProperties;
 import chaewonan.springbootdeveloper.domain.RefreshToken;
@@ -7,7 +8,6 @@ import chaewonan.springbootdeveloper.domain.User;
 import chaewonan.springbootdeveloper.dto.CreateAccessTokenRequest;
 import chaewonan.springbootdeveloper.repository.RefreshTokenRepository;
 import chaewonan.springbootdeveloper.repository.UserRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,6 @@ import java.util.Map;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 @SpringBootTest
 @AutoConfigureMockMvc
 class TokenApiControllerTest {
