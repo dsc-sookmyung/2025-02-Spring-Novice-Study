@@ -1,6 +1,7 @@
 package chaewonan.springbootdeveloper.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Table(name = "users")
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
 public class User implements UserDetails {
@@ -24,11 +25,11 @@ public class User implements UserDetails {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "nickname", unique = true)
     private String nickname;
+
+    @Column(name = "password")
+    private String password;
 
     @Builder
     public User(String email, String password, String nickname) {
@@ -43,22 +44,33 @@ public class User implements UserDetails {
     }
 
     @Override
-    public String getUsername() { return email; }
+    public String getUsername() {
+        return email;
+    }
 
     @Override
-    public String getPassword() { return password; }
+    public String getPassword() {
+        return password;
+    }
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isAccountNonExpired() { return true; }
+    public boolean isAccountNonLocked() {
+        return true;
+    }
 
     @Override
-    public boolean isAccountNonLocked() { return true; }
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
     @Override
-    public boolean isCredentialsNonExpired() { return true; }
-
-    @Override
-    public boolean isEnabled() { return true; }
+    public boolean isEnabled() {
+        return true;
+    }
 
     public User update(String nickname) {
         this.nickname = nickname;

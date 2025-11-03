@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 public class ArticleViewResponse {
-
     private Long id;
     private String title;
     private String content;
