@@ -7,6 +7,7 @@ import chaewonan.springbootdeveloper.config.oauth.OAuth2UserCustomService;
 import chaewonan.springbootdeveloper.repository.RefreshTokenRepository;
 import chaewonan.springbootdeveloper.service.UserService;
 import chaewonan.springbootdeveloper.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
+import chaewonan.springbootdeveloper.config.oauth.OAuth2SuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
