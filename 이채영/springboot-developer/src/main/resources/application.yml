@@ -24,8 +24,8 @@ spring:
     init:
       encoding: UTF-8
 
-profiles:
-  include: oauth,real-db
+  profiles:
+    include: oauth,real-db
 
   security:
     oauth2:
