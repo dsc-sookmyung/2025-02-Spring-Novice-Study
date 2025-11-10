@@ -20,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-// import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
+import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
 
 @RequiredArgsConstructor
 @Configuration
@@ -34,7 +34,7 @@ public class WebOAuthSecurityConfig {
     @Bean
     public WebSecurityCustomizer configure() { // 스프링 시큐리티 기능 비활성화
         return (web) -> web.ignoring()
-                // .requestMatchers(toH2Console())
+                .requestMatchers(toH2Console())
                 .requestMatchers(
                         new AntPathRequestMatcher("/img/**"),
                         new AntPathRequestMatcher("/css/**"),
