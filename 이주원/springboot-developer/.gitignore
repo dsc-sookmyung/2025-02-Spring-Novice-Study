@@ -43,7 +43,8 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store**/application-oauth.properties
+.DS_Store
+**/application-oauth.properties
 **/application-oauth.yml
 *.log
 **/logs/
