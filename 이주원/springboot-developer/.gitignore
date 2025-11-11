@@ -5,6 +5,7 @@ build/
 !**/src/test/**/build/
 .kotlin
 application.yml
+*.log
 
 ### IntelliJ IDEA ###
 .idea/
@@ -43,3 +44,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+**/application-oauth.properties
+**/application-oauth.yml
+*.log
+**/logs/
