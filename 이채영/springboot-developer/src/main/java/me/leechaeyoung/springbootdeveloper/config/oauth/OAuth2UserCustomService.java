@@ -17,10 +17,13 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        // 요청을 바탕으로 유저 정보를 담은 객체 반환
-        OAuth2User user = super.loadUser(userRequest);
-        saveOrUpdate(user);
-        return user;
+        OAuth2User oAuth2User = super.loadUser(userRequest);
+
+        // ✅ 선언한 이름과 일치해야 함
+        System.out.println("🔍 OAuth2 attributes: " + oAuth2User.getAttributes());
+
+        saveOrUpdate(oAuth2User);
+        return oAuth2User;
     }
 
     // 유저가 있으면 업데이트, 없으면 유저 생성
