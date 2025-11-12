@@ -17,8 +17,18 @@ dependencies {  //필요한 기능의 의존성을 입력
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation'org.springframework.boot:spring-boot-starter-data-jpa'   //spring data JPA
     runtimeOnly 'com.h2database:h2' //인메모리 DB local,test 환경에서 사용
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     compileOnly 'org.projectlombok:lombok'  //롬북 반복 메서드 작성 작업을 줄여주는 라이브러리
     annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.projectlombok:lombok'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1' //java JWT library
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'  //XML document & Java obj auto Mapping
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 test {
